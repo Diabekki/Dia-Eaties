@@ -1,1 +1,1 @@
-web: gunicorn diaeatiesblog.wsgi
+web: gunicorn diaeaties.wsgi
