@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.views.generic.edit import CreateView
 from .models import Post
 from .forms import CommentForm
 
@@ -74,3 +75,18 @@ class RecipeLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class CreateRecipe(CreateView):
+    model = Post
+    fields = ['title', 'author', 'featured_image', 'excerpt', 'content', 'status']
+    template_name = 'recipe_user.html'
+
+    def get_success_url(self):
+        return reverse('recipe_detail', kwargs={'slug': self.object.slug})
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        print(form.cleaned_data)
+        return super().form_valid(form)
+

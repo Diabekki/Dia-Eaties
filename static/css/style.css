@@ -107,18 +107,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #0F4C81;
+    background-color: #23BBBB;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #0F4C81;
+    color: #23BBBB;
 }
 
 .link {
-    color: #0F4C81;
+    color: #23BBBB;
     text-decoration: none;
 }
 
