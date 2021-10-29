@@ -9,10 +9,6 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
-}
-
 .thin {
     font-weight: 300;
 }
@@ -30,8 +26,18 @@ body {
 }
 
 .card {
-    border: none;
+    border: rgb(0, 0, 0);
     background-color: transparent;
+}
+
+.create-button {
+    background-color: rgb(255, 255, 255);
+    color: #326ead;
+}
+
+.btn-outline-warning {
+    color: #326ead;
+    border-color: #000000;
 }
 
 .image-container {
@@ -40,10 +46,10 @@ body {
 
 .image-flash {
     position: absolute;
-    bottom: 5%;
+    bottom: 4%;
     min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
+    left: -20px;
+    background-color: #326ead;
 }
 
 .author {
@@ -93,7 +99,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #a76527;
 }
 
 .post-title {
@@ -107,18 +113,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #326ead;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #326ead;
 }
 
 .link {
-    color: #23BBBB;
+    color: #326ead;
     text-decoration: none;
 }
 
@@ -139,4 +145,8 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.bg-dark {
+        background-color: #326ead!important;
 }
