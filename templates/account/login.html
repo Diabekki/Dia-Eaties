@@ -9,19 +9,30 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
 
+      <style>
+        h1{
+          font-family:'Zen Antique', 'Lato';
+        }
 
+        p{
+          font-family:'Zen Antique', 'Lato';
+        }
+      </style>
+      
       <h1>{% trans "Welcome back!" %}</h1>
 
       <p>{% blocktrans %}Welcome back dia-buddy! To leave a comment or show your love for a post, please log in.
         If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up and join the community!</a>{% endblocktrans %}</p>
+        <a href="{{ signup_url }}">sign up and join the community!</a>
+        
+        {% endblocktrans %}</p>
 
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 offset-md-2 text-center">
 
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
@@ -29,7 +40,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-signup text-center" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

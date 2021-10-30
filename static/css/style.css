@@ -1,9 +1,11 @@
 body {
     background-color: #F9FAFC;
+    line-height: 2.5rem;
+    font-weight: 500;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Zen Antique', 'Lato';
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -52,10 +54,16 @@ body {
     background-color: #326ead;
 }
 
+.card-title {
+    font-family: 'Zen Antique', 'Lato';
+}
+
 .author {
     color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    margin-top: 1px;
+    margin: 10px;
+    font-style: italic;
+    font-family: 'Zen Antique', 'Lato';
 }
 
 .masthead {
@@ -68,28 +76,15 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #326ead;
     color: white;
     position: relative;
+    margin-left: 25%;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
 }
 
 .post-link {
@@ -115,6 +110,7 @@ body {
 .btn-signup {
     background-color: #326ead;
     color: #fff;
+    border-radius: 50%;
 }
 
 .btn-signup:hover,
@@ -146,6 +142,49 @@ body {
     background: transparent;
     border: none;
 }
+
+/* Create a recipe form page styling */
+
+.form-control {
+    display: block;
+    width: 90%;
+    padding: 0.375rem 0.75rem;
+    margin-left: 10px;
+    font-size: 1rem;
+    font-family: 'Zen Antique', 'Lato';
+    font-weight: 600;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.col-md-8 {
+    margin-left: 4%;
+}
+
+
+.card-body {
+    margin-left: 4%;
+}
+
+.btn {
+    color: #fff;
+    background-color: #326ead;
+    border-color: #326ead;
+    border-radius: 9%;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
 
 .bg-dark {
         background-color: #326ead!important;
