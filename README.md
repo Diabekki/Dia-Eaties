@@ -115,11 +115,11 @@ The blog features a number of interacvitiy for the user, it includes the option 
   - Enabled automatic deploys
   - Clicked "Deploy Branch" 
 
-
-
   The live links to my project are - 
    - https://8000-beige-grasshopper-kkfhy7ez.ws-eu17.gitpod.io/
    - https://diaeatiesblog.herokuapp.com/
+
+
 
 ## Acknowledgements
 
