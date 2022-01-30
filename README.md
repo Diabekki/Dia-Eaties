@@ -3,6 +3,7 @@
 
 # Dia-Eaties Recipe blog
 This project is a recipe blog dedicated to low carb and low sugar meals for diabetics, its very difficult to find suitable recipes for diet requirements in the vast sea of recipes online so I felt this site would be nice to have to have everything compiled into a singular space.
+I followed the recipe blog for the project development.
 
 ## Features
 The blog features a number of interacvitiy for the user, it includes the option to

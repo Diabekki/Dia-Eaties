@@ -7,10 +7,10 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+class Recipes(models.Model):
+    recipe_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
+    recipe_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder')
@@ -24,22 +24,22 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
+            self.slug = slugify(self.recipe_title)
+        super(Recipes, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title
+        return self.recipe_title
 
     def number_of_likes(self):
         return self.likes.count()
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comment")
+    post_comment = models.ForeignKey(Recipes, on_delete=models.CASCADE,
+                                related_name="comment")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
