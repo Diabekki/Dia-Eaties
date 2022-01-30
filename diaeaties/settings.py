@@ -26,6 +26,8 @@ DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+CSRF_TRUSTED_ORIGINS = ["https://8000-diabekki-diaeaties-bxg8w2s565b.ws-eu29.gitpod.io"]
+
 ALLOWED_HOSTS = ['diaeatiesblog.herokuapp.com', 'localhost']
 
 

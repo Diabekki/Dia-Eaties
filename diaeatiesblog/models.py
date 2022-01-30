@@ -39,7 +39,7 @@ class Recipes(models.Model):
 
 class Comment(models.Model):
     post_comment = models.ForeignKey(Recipes, on_delete=models.CASCADE,
-                                related_name="comment")
+                                related_name="recipe_comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

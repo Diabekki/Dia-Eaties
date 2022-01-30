@@ -17,7 +17,7 @@ class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipes.objects.filter(status=1)
         post_comment = get_object_or_404(queryset, slug=slug)
-        comments = post_comment.comment.filter(approved=True).order_by('created_on')
+        recipe_comments = post_comment.comment.filter(approved=True).order_by('created_on')
         liked = False
         if post_comment.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -27,7 +27,7 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "post_comment": post_comment,
-                "comments": comments,
+                "recipe_comments": recipe_comments,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
@@ -37,7 +37,7 @@ class RecipeDetail(View):
     def post_comment(self, request, slug, *args, **kwargs):
         queryset = Recipes.objects.filter(status=1)
         post_comment = get_object_or_404(queryset, slug=slug)
-        comments = post_comment.comment.filter(approved=True).order_by('created_on')
+        recipe_comments = post_comment.comment.filter(approved=True).order_by('created_on')
         liked = False
         if post_comment.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -46,9 +46,9 @@ class RecipeDetail(View):
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post_comment = post_comment
-            comment.save()
+            recipe_comments = comment_form.save(commit=False)
+            recipe_comments.post_comment = post_comment
+            recipe_comments.save()
         else:
             comment_form = CommentForm()
 
@@ -57,7 +57,7 @@ class RecipeDetail(View):
             "recipe_detail.html",
             {
                 "post_comment": post_comment,
-                "comments": comments,
+                "recipe_comments": recipe_comments,
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm()
