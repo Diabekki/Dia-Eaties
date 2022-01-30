@@ -17,7 +17,7 @@ class RecipeDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipes.objects.filter(status=1)
         post_comment = get_object_or_404(queryset, slug=slug)
-        recipe_comments = post_comment.comment.filter(approved=True).order_by('created_on')
+        recipe_comments = post_comment.comment.filter(approved=True).order_by('-created_on')
         liked = False
         if post_comment.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -37,7 +37,7 @@ class RecipeDetail(View):
     def post_comment(self, request, slug, *args, **kwargs):
         queryset = Recipes.objects.filter(status=1)
         post_comment = get_object_or_404(queryset, slug=slug)
-        recipe_comments = post_comment.comment.filter(approved=True).order_by('created_on')
+        recipe_comments = post_comment.comment.filter(approved=True).order_by('-created_on')
         liked = False
         if post_comment.likes.filter(id=self.request.user.id).exists():
             liked = True
